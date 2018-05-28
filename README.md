@@ -15,7 +15,7 @@ coming soon...
 ![demo](https://github.com/monlie/leetcode2github/blob/master/examples/demo.gif)
 
 ## Change Log
-### v0.0.1(2018/5/27)
+### v0.0.1 (2018/5/27)
 * start the project
 * write a front-end script to get codes and running info from LeetCode
 * write a python script to upload your codes to github
