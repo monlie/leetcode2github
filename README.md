@@ -15,6 +15,9 @@ coming soon...
 ![demo](https://github.com/monlie/leetcode2github/blob/master/examples/demo.gif)
 
 ## Change Log
+### v0.1.0 (2018/6/3 ~~before tankday XDDDD~~)
+* build the interface between js and python
+* now you can upload your codes to github via **leetcode2github** actually!
 ### v0.0.1 (2018/5/27)
 * start the project
 * write a front-end script to get codes and running info from LeetCode

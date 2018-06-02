@@ -22,10 +22,10 @@
         var host = "https://leetcode-cn.com";
         var name = $("a.inline-wrap").text();
         var url = host + $("a.inline-wrap").attr("href");
+        var language = $("#result_language").text();
         var time = $("#result_runtime").text();
         var user = $(".username").find("b").first().text();
-        var info = "Name: " + name + "\nURL: " + url + "\nTime: " + time + "\nUser: " + user;
-        return '"""\n' + info + '\n"""\n' + code;
+        return {"url": url, "name": name, "language": language, "time": time, "user": user, "code": code}
     }
 
     var upload_btn_html = '<div class="pull-middle">';
@@ -39,17 +39,17 @@
     pos.append(upload_info_html);
     var upload_btn = $('#upload-code-btn');
     var upload_info = $('#upload_info');
-    //upload_info.css('color', 'blue');
+    upload_info.css('color', '#9a9a9a');
 
     $(function () {
-
-
-
         $('#upload-code-btn').click(function () {
-            alert(get_codes());
-            upload_info.text('已上传');
-            upload_info.css('color', 'green');
-            upload_btn.attr("disabled", true);
+            var info = get_codes();
+            $.post("URL",                  // replace URL with the real url of your server
+                   info, function (data, status) {
+                   upload_info.text(data.data);
+                   upload_info.css('color', 'green');
+                   upload_btn.attr("disabled", true);
+            });
         });
     });
 })();
